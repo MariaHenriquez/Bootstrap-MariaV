@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Repostería Dulce Sueño</title>
+  <style>
+    /* Reset y estilos generales */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fef0f3;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Encabezado principal */
+    header {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8em;
+      color: #e9718c;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Navegación */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      background-color: #f9c8d4;
+      padding: 12px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: #e9718c;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a:hover {
+      background-color: #d65f7a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    /* ===== CARRUSEL SUPER BONITO Y MODERNO (Fade) ===== */
+    .carousel-fade-container {
+      width: 100%;
+      margin: 40px auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 25px;
+      height: 500px;
+      box-shadow: 0 15px 40px rgba(233, 113, 140, 0.25);
+    }
+
+    .carousel-fade {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .carousel-fade-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
+    .carousel-fade-slide.active {
+      opacity: 1;
+    }
+
+    .carousel-fade-caption {
+      background: linear-gradient(to bottom, transparent, rgba(233, 113, 140, 0.9)), rgba(0,0,0,0.3);
+      color: white;
+      padding: 30px;
+      margin: 20px;
+      border-radius: 18px;
+      font-size: 2em;
+      font-weight: bold;
+      max-width: 50%;
+      backdrop-filter: blur(5px);
+      animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Flechas del carrusel */
+    .carousel-fade-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(233, 113, 140, 0.9);
+      color: white;
+      border: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 1.5em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-fade-btn:hover {
+      background: #e9718c;
+      transform: translateY(-50%) scale(1.15);
+      box-shadow: 0 7px 20px rgba(0,0,0,0.3);
+    }
+
+    .carousel-fade-btn.prev {
+      left: 20px;
+    }
+
+    .carousel-fade-btn.next {
+      right: 20px;
+    }
+
+    /* Indicadores inferiores */
+    .carousel-fade-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .indicator-dot {
+      width: 16px;
+      height: 16px;
+      background-color: #ddd;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 0 2px transparent;
+    }
+
+    .indicator-dot:hover {
+      transform: scale(1.2);
+    }
+
+    .indicator-dot.active {
+      background-color: #e9718c;
+      transform: scale(1.4);
+      box-shadow: 0 0 0 3px rgba(233, 113, 140, 0.3);
+    }
+
+    /* Sección de contacto */
+    .contacto-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 30px 20px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .contacto-item {
+      background-color: white;
+      color: #555;
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contacto-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .contacto-item h3 {
+      color: #e9718c;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .contacto-item p {
+      margin: 8px 0;
+      font-size: 1em;
+    }
+
+    /* Div rosa decorativo */
+    .fondo-rosa {
+      background-color: #ffd1dc;
+      padding: 40px 20px;
+      text-align: center;
+      margin: 30px 0;
+      border-radius: 15px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .fondo-rosa h2 {
+      color: #d65f7a;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #f9c8d4;
+      margin-top: 40px;
+      border-top: 2px solid #e9718c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <h1>Repostería Dulce Sueño</h1>
+  </header>
+
+  <!-- Navegación -->
+  <nav>
+    <a href="postres.html">Postres</a>
+    <a href="pagina2.html">Más Postres</a>
+    <a href="compras.html">Compras</a>
+  </nav>
+
+  <!-- ===== CARRUSEL FANTASÍA - FADE SUEÑO ===== -->
+  <div class="carousel-fade-container">
+    <div class="carousel-fade" id="carouselFade">
+      <!-- Pastel rosa de varios pisos -->
+      <div class="carousel-fade-slide active" style="background-image: url('https://itsafabulouslife.com/wp-content/uploads/2024/05/Carrot-Cake-Instructions.jpg');">
+        <div class="carousel-fade-caption">Pasteles Rosas de Ensueño</div>
+      </div>
+      <!-- Cupcakes decorados -->
+      <div class="carousel-fade-slide" style="background-image: url('https://itsafabulouslife.com/wp-content/uploads/2024/04/Cherry-Cake-Recipe.jpg');">
+        <div class="carousel-fade-caption">Cupcakes con Amor</div>
+      </div>
+      <!-- Donas glaseadas con decoración -->
+      <div class="carousel-fade-slide" style="background-image: url('https://img.freepik.com/premium-photo/cake-with-strawberry-top_931553-70084.jpg');">
+        <div class="carousel-fade-caption">Donas Artesanales</div>
+      </div>
+      <!-- Galletas y postres pequeños en caja -->
+      <div class="carousel-fade-slide" style="background-image: url('https://wpcluster.dctdigital.com/thecourier/wp-content/uploads/sites/12/2020/05/Carrot-cake-e1589984158508.jpg');">
+        <div class="carousel-fade-caption">Cajas de Dulces Personalizadas</div>
+      </div>
+    </div>
+
+    <button class="carousel-fade-btn prev" onclick="moveFadeCarousel(-1)">&#10094;</button>
+    <button class="carousel-fade-btn next" onclick="moveFadeCarousel(1)">&#10095;</button>
+
+    <div class="carousel-fade-indicators" id="fadeIndicators"></div>
+  </div>
+  <!-- ===== FIN DEL CARRUSEL ===== -->
+
+  <!-- Div rosa con título -->
+  <div class="fondo-rosa">
+    <h2>¡Haz tu pedido hoy!</h2>
+    <p>Atendemos pedidos personales, para eventos y bodas. Contáctanos y haz tu antojo realidad.</p>
+  </div>
+
+  <!-- Sección de contacto en fila horizontal -->
+  <section class="contacto-container">
+    <div class="contacto-item">
+      <h3>📧 Correo</h3>
+      <p>dulcesueños@reposteria.com</p>
+    </div>
+
+    <div class="contacto-item">
+      <h3>📞 Teléfono</h3>
+      <p>+123 456 7890</p>
+    </div>
+
+    <div class="contacto-item">
+      <h3>🕒 Horario</h3>
+      <p>Lunes a Sábado</p>
+      <p>9:00 AM - 7:00 PM</p>
+    </div>
+
+    <div class="contacto-item">
+      <h3>📍 Dirección</h3>
+      <p>Calle Postres 123</p>
+      <p>Ciudad Dulce</p>
+    </div>
+
+    <div class="contacto-item">
+      <h3>✅ Instagram</h3>
+      <p>@_pasteleria_2027</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Repostería Dulce Sueño. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Carrusel Fade - Control
+    let currentIndex = 0;
+    const carousel = document.getElementById('carouselFade');
+    const slides = carousel.querySelectorAll('.carousel-fade-slide');
+    const indicatorsContainer = document.getElementById('fadeIndicators');
+
+    // Crear puntos indicadores
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('indicator-dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      indicatorsContainer.appendChild(dot);
+    });
+
+    function updateIndicators() {
+      document.querySelectorAll('.indicator-dot').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = index;
+      slides[currentIndex].classList.add('active');
+      updateIndicators();
+    }
+
+    function moveFadeCarousel(direction) {
+      const total = slides.length;
+      let nextIndex = (currentIndex + direction + total) % total;
+      goToSlide(nextIndex);
+    }
+
+    // Autoplay
+    setInterval(() => {
+      moveFadeCarousel(1);
+    }, 4500);
+  </script>
+
+</body>
+</html>

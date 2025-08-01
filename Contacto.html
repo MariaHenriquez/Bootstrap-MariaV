@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentranos!</title>
+    <style>
+        body {
+            background-color: #f9c8d4;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .color {
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 15px;
+            width: 500px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+        }
+        .color:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15x rgba(0,0,0,0.2);
+        }
+        .color h1 {
+            color: rgb(255, 142, 161);
+            margin-top: 0;
+        }
+
+
+        /* carrusel*/
+        .carousel {
+            position: relative;
+            display: inline-block;
+            width: 60%;
+            max-width: 600px;
+            height: 400px;
+            margin: 30px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            
+             background-color: #f9c8d4; 
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 600%; 
+            height: 100%;
+            animation: slide 24s infinite;
+        }
+
+        .carousel-item {
+
+            width: 16.666%; /* 100% ÷ 6 */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Animación del carrusel */
+        @keyframes slide {
+            0%, 16.66% { transform: translateX(0%); }          
+            16.67%, 33.33% { transform: translateX(-16.66%); }  
+            33.34%, 50% { transform: translateX(-33.33%); }     
+            50.01%, 66.66% { transform: translateX(-50%); }     
+            66.67%, 83.33% { transform: translateX(-66.66%); }  
+            83.34%, 99.99% { transform: translateX(-83.33%); }  
+            100% { transform: translateX(0%); }                 
+        }
+        
+
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+              padding: 10px;
+            text-align: center
+        }
+        .boton-comprar1{
+       background-color: #ffffff;
+      color: #e9718c;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      
+      }
+
+    </style>
+</head>
+<body>
+    <!--Titulo y subtitulos-->
+    <h1> Nuestra Ubicación</h1>
+    
+    <p>Estamos ubicados en <strong>calle Postres 123, Ciudad Dulce</strong></p>
+    
+    <p>Para recoger tu pedido puedes visitar nuestra tienda en los siguientes horarios:</p>
+
+    <!-- Caja de Horarios -->
+    <div class="color">
+        <h1>Horarios</h1>
+        <p><strong>Lunes a Sábado:</strong> 9:00 AM - 7:00 PM</p>
+        <p><strong>Domingos:</strong> 7:00 AM - 1:00 PM</p>
+    </div>
+
+    <!-- carrusel-->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="https://s3.abcstatics.com/media/summum/2019/05/02/apertura-peggy-kNYH--1248x698@abc.jpg" alt="Tienda Principal">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.consumoteca.com/wp-content/uploads/Pastel-de-chocolate-David-Holifield-Unsplash.jpg" alt="Productos Frescos">
+            </div>
+            <div class="carousel-item">
+                <img src="https://yanubapasteleria.com/wp-content/uploads/2023/05/DSC05517-1-1.jpg" alt="Productos">
+            </div>
+            <div class="carousel-item">
+                <img src="https://img77.uenicdn.com/image/upload/v1567705999/category/shutterstock_191870003.jpg" alt="Productos">
+            </div>
+            <div class="carousel-item">
+                <img src="https://lecaroz.com/wp-content/uploads/2024/05/2-arcoiris.jpg" alt="Productos">
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.nestleprofessional.com.mx/sites/default/files/2025-01/tecnicas-reposteria-glaseado-espejo-frutas-liofilizadas.jpg" alt="Producto">
+            </div>
+        </div>
+    </div> 
+    <div>
+        <a href="index.html" class="boton-comprar1">Volver</a>
+    </div>
+
+    <div class="footer">
+        <p>¡Gracias por preferirnos!</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Dulce Sueño</title>
+</head>
+<body>
+    <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fcdde0; /* rosa pastel */
+      color: #333;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+       background-color: #f9c8d4;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+       background-color: #e9718c;
+      transition: 0.3s;
+      font-family:'Segoe UI', sans-serif ;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #5c85e5;
+    }
+
+    header {
+     font-family: 'Segoe UI', sans-serif;
+     background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+
+    .producto img {
+      width: 500px;
+      height: 380px;
+      object-fit: cover;
+    }
+
+    .Conteiner{
+    background-color:#f9c8d4;
+    }
+    .seccion {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .seccion h2 {
+      color: #555;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .seccion ul {
+      padding-left: 20px;
+    }
+
+    .seccion li {
+      margin-bottom: 8px;
+    }
+    main {
+      padding: 20px;
+      max-width: 90%;
+      margin: auto;
+      background-color: #fcdde0; /* rosa pastel */
+      color: #333;
+    }
+    .descripcion{
+      font-size: 30px;
+      font-family:'Times New Roman', Times, serif;
+      display: flex;
+      justify-content: left;
+      align-items:left;
+      margin: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: #dfe7fd;
+      color: #555;
+    }
+    .agregar{
+       font-size: 30px;
+      font-family:'Times New Roman', Times, serif;
+      display: flex;
+      justify-content: left;
+      align-items:left;
+      margin: 20px;
+      gap:20px
+    }
+    .boton-comprar1{
+       background-color: #e9718c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 50px;
+      margin-left: 500px  
+      }
+    .Realizadacompra{
+    background: white;
+      border-radius: 10px;
+      display: flex;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 250px;
+       transition: transform 0.5s ease, box-shadow 0.3s ease;
+    }
+
+    .Realizadacompra:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15x rgba(0,0,0,0.2);
+    }
+    
+    .boton-comprar1{
+       background-color: #e9718c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 50px;
+      margin-left: 500px  
+      }
+    
+
+
+    </style>
+<!--Realiza tu compra-->
+<main>
+<div class="Realizadacompra"> 
+    <header>
+        <h1>¡Tu compra ya está realizada!</h1>
+        <p> Cualquier duda o problema, contactanos.</p>
+         <a href="Contacto.html" class="boton-comprar1">Dirección</a>
+        </header>
+
+    
+</div>
+
+       
+
+<!-- CONTACTO -->
+    <div class="seccion">
+      <h2>Contáctanos</h2>
+      <p>Correo: dulcesueños@reposteria.com</p>
+      <p>Teléfono: +123 456 7890</p>
+      <p>Horario: Lunes a Sábado de 9:00 AM a 7:00 PM</p>
+      <p>Dirección: Calle Postres 123, Ciudad Dulce</p>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Repostería Dulce Sueño
+  </footer>
+
+</main>
+
+</body>
+</html>

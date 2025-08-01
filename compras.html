@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compras - Dulce Sueño</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f6f7ff;
+      color: #333;
+    }
+
+    header {
+       background-color: white;
+      padding: 20px;
+      text-align: center;
+    }
+      h1 {
+      margin: 0;
+      font-size: 2.8em;
+      color: #e9718c;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      margin: 0;
+      font-size: 2.5em;
+      }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+       background-color: #f9c8d4;
+      padding: 10px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+       background-color: #e9718c;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #5c85e5;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .producto {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+    }
+
+    .producto img {
+      width: 200px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .info h3 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    .info p {
+      margin: 5px 0;
+    }
+
+    .boton-comprar {
+       background-color: #e9718c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .boton-comprar:hover {
+       background-color: #f1eaec;
+       
+    }
+
+    .seccion {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .seccion h2 {
+      color: #555;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .seccion ul {
+      padding-left: 20px;
+    }
+
+    .seccion li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: #dfe7fd;
+      color: #555;
+    }
+    a.boton-comprar1{
+       background-color: #e9718c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+
+    }
+
+  </style>
+</head>
+<body>
+
+<!--Aqui es el titulo-->   
+  <header>
+    <h1>Compras</h1>
+    <p>Selecciona tus postres favoritos y realiza tu pedido</p>
+  </header>
+<!--Este es el menú-->
+  <nav>
+        <a href="postres.html">Postres</a>
+        <a href="pagina2.html">Más Postres</a>
+        <a href="compras.html">Compras</a>
+        <a href="index.html">Volver</a>
+    </nav>
+  <main>
+
+<!-- PRODUCTO 1 -->
+    <div class="producto">
+      <img src=https://i.etsystatic.com/42680606/r/il/1743a0/5352009941/il_1080xN.5352009941_j66n.jpg  alt="Tarta de Limón">
+      <div class="info">
+        <h3>Tarta de Limón</h3>
+        <p>Deliciosa tarta con base de galleta y relleno de limón fresco.</p>
+        <p><strong>$12.00</strong></p>
+        <p>Porción para 6 personas</p>
+        <a href="Carrito.html" class="boton-comprar1">Agregar al carrito</a>
+      </div>
+    </div>
+
+<!-- PRODUCTO 2 -->
+    <div class="producto">
+      <img src="https://pics.craiyon.com/2023-11-18/GRu1trK0Q7CF7LxC55E6Cw.webp" alt="Pastel de Chocolate">
+      <div class="info">
+        <h3>Pastel de Chocolate</h3>
+        <p>Pastel de una capa con relleno de chocolate y cobertura de ganache.</p>
+        <p><strong>$15.00</strong></p>
+        <p>Porción para 8 personas</p>
+        <button class="boton-comprar">Agregar al carrito</button>
+      </div>
+    </div>
+
+<!-- PRODUCTO 3 -->
+    <div class="producto">
+      <img src=https://hips.hearstapps.com/hmg-prod/images/tiramisu-cake1-1657209890.jpg alt="Tiramisú">
+      <div class="info">
+        <h3>Tiramisú</h3>
+        <p>Postre italiano con capas de café, mascarpone y cacao en polvo.</p>
+        <p><strong>$18.00</strong></p>
+        <p>Porción para 12 personas</p>
+        <button class="boton-comprar">Agregar al carrito</button>
+      </div>
+    </div>
+
+    
+<!-- CONTACTO -->
+    <div class="seccion">
+      <h2>Contáctanos</h2>
+      <p>Correo: dulcesueños@reposteria.com</p>
+      <p>Teléfono: +123 456 7890</p>
+      <p>Horario: Lunes a Sábado de 9:00 AM a 7:00 PM</p>
+      <p>Dirección: Calle Postres 123, Ciudad Dulce</p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Repostería Dulce Sueño
+  </footer>
+
+</body>
+</html>
